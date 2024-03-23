@@ -26,7 +26,22 @@
                     <h4 id="calendario">Inicio</h4>
                 </a>
             </div>
-            
+            <div class="option" title="Simulacro">
+                <a href="{{ route('simulacro') }}">
+                <i class="fa-solid fa-book"></i>
+                    <p class="option2">Sim</p>
+                    <h4 id="calendario">Simulacro</h4>
+                </a>
+            </div>
+            @if(auth()->user()->rol == 2)
+            <div class="option" title="Preguntas">
+                <a href="{{ route('list_question') }}">
+                    <i class="fa-solid fa-paperclip"></i>
+                    <p class="option2">Preg</p>
+                    <h4 id="calendario">Pregunta</h4>
+                </a>
+            </div>
+            @endif
         </div>
         <div class="menu_side_part2">
             <div class="option" title="Cerrar Sesion">
@@ -40,10 +55,15 @@
     <div class="content">
         <div class="section_1">
             <p class="welcome">Bienvenido &nbsp;</p>
-            <p>
+            <p class="full_name">
                 @if (auth()->check())
                     {{ auth()->user()->name }}
                     {{ auth()->user()->last_name }}
+                @endif
+            </p>
+            <p class="name">
+                @if (auth()->check())
+                    {{ auth()->user()->name }}
                 @endif
             </p>
         </div>

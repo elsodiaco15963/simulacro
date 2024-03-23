@@ -6,6 +6,21 @@ body {
     background-color: #f0f0f0;
     display: flex;
 }
+.hamburguer {
+    color: #fff;
+    background-color: #333;
+    cursor: pointer;
+    height: 60px;
+    padding: 0px 20px;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.hamburguer:hover {
+    background-color: #333;
+    color: #fff;
+}
 .menu_side {
     background-color: #fff;
     width: 200px;
@@ -27,6 +42,13 @@ body {
 }
 .small-menu {
     width: 60px;
+
+}
+.small-menu .option a{
+    width: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
 }
 
 .option {
@@ -39,12 +61,12 @@ body {
     align-items: center;
     text-decoration: none;
     color: #000;
-    padding: 10px 0;
 }
 
 .option a i,
 .option a h4 {
-    padding-left: 10px;
+
+    padding: 0px 0px 0px 10px;
     transition: color 0.3s;
 }
 
@@ -104,6 +126,52 @@ body {
     display: none;
 }
 
+.name{
+    display: none;
+}
+
+.inicio-container {
+    width: 100%;
+    height: calc(100vh - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inicio-message-container{
+    width: 100%;
+    text-align: center;
+}
+
+.universidad-container {
+    padding: 40px 40px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+.columna {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    padding: 20px;
+    border: 3px solid black;
+    height: 150px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.columna:hover{
+    background-color: #a6a1a1;
+    color: #fff;
+}
+.columna img {
+    width: 100%;
+}
+.reducido{
+    display: none;
+}
+
 @media (max-width: 768px) {
     body{
         height: calc(100vh - 60px);
@@ -121,6 +189,12 @@ body {
         padding: 0;
         display: flex;
         justify-content: center;
+        align-items: center;
+    }
+
+    .hamburguer2 img{
+        width: 40px;
+        height: 40px;
     }
 
     .menu_side {
@@ -151,4 +225,51 @@ body {
         width: 100%;
         text-align: center;
     }
+    .welcome{
+        display: none;
+    }
+    .full_name{
+        display: none;
+    }
+    .name{
+        display: block;
+    }
+    .section_2 {
+        padding-left: 60px;
+        width: calc(100% - 60px);
+        height: calc(100vh - 60px);
+    }
+    .inicio-container{
+        width: 100%;
+        height: calc(100vh - 120px);
+    }
+    .inicio-message-container{
+        width: 260px;
+    }
+    .inicio-message-container p{
+        font-size: 12px;
+    }
+    .inicio-message-container img{
+        width: 100%;
+    }
+    .universidad-container {
+        padding: 10px 10px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .columna {
+        padding: 10px;
+        border: 2px solid black;
+        height: 100px;
+        font-size: 14px;
+    }
+    .normal{
+        display: none;
+    }
+    .reducido{
+        display: block;
+    }
+
 }
