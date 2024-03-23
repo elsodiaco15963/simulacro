@@ -41,7 +41,7 @@
         </select><br>
         <div class="pregunta_container">
             <label for="pregunta">Pregunta:</label><br>
-            <input type="text" id="pregunta" name="pregunta[]" required><br>
+            <textarea type="text" id="pregunta" name="pregunta[]"></textarea><br>
 
             <label for="imagen">Imagen (De ser necesario):</label><br>
             <input type="file" id="imagen" name="imagen" accept="image/*"><br>
@@ -83,7 +83,7 @@
             <textarea id="texto" name="texto"></textarea><br>
 
             <label for="pregunta">Pregunta 1:</label><br>
-            <input type="text" id="pregunta" name="pregunta[]" required><br>
+            <textarea type="text" id="pregunta" name="pregunta[]"></textarea><br>
 
             <label for="opcion_1">Opcion 1:</label><br>
             <input type="text" id="opcion_1" name="opcion_1[]" required><br>
@@ -111,7 +111,7 @@
             </select><br>
 
             <label for="pregunta">Pregunta 2:</label><br>
-            <input type="text" id="pregunta" name="pregunta[]" required><br>
+            <textarea type="text" id="pregunta" name="pregunta[]"></textarea><br>
 
             <label for="opcion_1">Opcion 1:</label><br>
             <input type="text" id="opcion_1" name="opcion_1[]" required><br>
@@ -139,7 +139,7 @@
             </select><br>
 
             <label for="pregunta">Pregunta 3:</label><br>
-            <input type="text" id="pregunta" name="pregunta[]" required><br>
+            <textarea type="text" id="pregunta" name="pregunta[]"></textarea><br>
 
             <label for="opcion_1">Opcion 1:</label><br>
             <input type="text" id="opcion_1" name="opcion_1[]" required><br>
@@ -167,7 +167,7 @@
             </select><br>
 
             <label for="pregunta">Pregunta 4:</label><br>
-            <input type="text" id="pregunta" name="pregunta[]" required><br>
+            <textarea type="text" id="pregunta" name="pregunta[]"></textarea><br>
 
             <label for="opcion_1">Opcion 1:</label><br>
             <input type="text" id="opcion_1" name="opcion_1[]" required><br>
@@ -195,7 +195,7 @@
             </select><br>
 
             <label for="pregunta">Pregunta 5:</label><br>
-            <input type="text" id="pregunta" name="pregunta[]" required><br>
+            <textarea type="text" id="pregunta" name="pregunta[]"></textarea><br>
 
             <label for="opcion_1">Opcion 1:</label><br>
             <input type="text" id="opcion_1" name="opcion_1[]" required><br>
