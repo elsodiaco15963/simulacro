@@ -17,11 +17,11 @@
             <div class="login-input-container">
                 <i class="fa-solid fa-user"></i>
                 <label for="email">Usuario:</label><br><br>
-                <input style="font-size: 20px" class="border" type="text" id="email" name="email"><br>
+                <input style="font-size: 15px" class="border" type="text" id="email" name="email"><br>
 
                 <i class="fa-solid fa-lock"></i>
                 <label for="password">Contraseña:</label></br><br>
-                <input style="font-size: 20px" class="border" type="password" id="password" name="password"><br>
+                <input style="font-size: 15px" class="border" type="password" id="password" name="password"><br>
                 <div class="login-button-container">
                     <button type="submit">Ingresar</button>
                 </div>
