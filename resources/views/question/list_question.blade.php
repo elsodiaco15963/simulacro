@@ -3,8 +3,9 @@
 @section('content')
     <div class="question_container">
         <div class="question_create_container">
-            <a href="{{ route('create_question', ['value' => 'untels']) }}">Nueva Pregunta</a>
-        </div><br>
+            <a href="{{ route('create_question', ['value' => 'untels']) }}">Nueva Pregunta</a> <Br></Br>
+            Filtros de Luis
+        </div>
         <div class="question_summary_container">
             @php
                 $conteo_asignatura_rv = 0;
@@ -27,7 +28,7 @@
                 foreach ($preguntas as $pregunta) {
                     if ($pregunta->asignatura == 'RV') {
                         $conteo_asignatura_rv++;
-                    }                
+                    }
                     if ($pregunta->asignatura == 'RM') {
                         $conteo_asignatura_rm++;
                     }
@@ -75,91 +76,91 @@
                     }
                 }
             @endphp
-            <table>
+            <table class="question_summary_table">
                 <thead>
                     <tr>
-                        <td colspan="4">Cantidad de Preguntas</td>
+                        <td colspan="4" style="text-align: center">Cantidad de Preguntas</td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>RV:</td>
                         <td>
-                            {{$conteo_asignatura_rv}}
+                            {{ $conteo_asignatura_rv }}
                         </td>
                         <td>RM:</td>
                         <td>
-                            {{$conteo_asignatura_rm}}
+                            {{ $conteo_asignatura_rm }}
                         </td>
                     </tr>
                     <tr>
                         <td>Aritmetica:</td>
                         <td>
-                            {{$conteo_asignatura_aritmetica}}
+                            {{ $conteo_asignatura_aritmetica }}
                         </td>
                         <td>Algebra:</td>
                         <td>
-                            {{$conteo_asignatura_algebra}}
+                            {{ $conteo_asignatura_algebra }}
                         </td>
                     </tr>
                     <tr>
                         <td>Geometria:</td>
                         <td>
-                            {{$conteo_asignatura_geometria}}
+                            {{ $conteo_asignatura_geometria }}
                         </td>
                         <td>Trigonometria:</td>
                         <td>
-                            {{$conteo_asignatura_trigonometria}}
+                            {{ $conteo_asignatura_trigonometria }}
                         </td>
                     </tr>
                     <tr>
                         <td>Fisica:</td>
                         <td>
-                            {{$conteo_asignatura_fisica}}
+                            {{ $conteo_asignatura_fisica }}
                         </td>
                         <td>Quimica:</td>
                         <td>
-                            {{$conteo_asignatura_quimica}}
+                            {{ $conteo_asignatura_quimica }}
                         </td>
                     </tr>
                     <tr>
                         <td>Biologia:</td>
                         <td>
-                            {{$conteo_asignatura_biologia}}
+                            {{ $conteo_asignatura_biologia }}
                         </td>
                         <td>Lenguaje:</td>
                         <td>
-                            {{$conteo_asignatura_lenguaje}}
+                            {{ $conteo_asignatura_lenguaje }}
                         </td>
                     </tr>
                     <tr>
                         <td>Literatura:</td>
                         <td>
-                            {{$conteo_asignatura_literatura}}
+                            {{ $conteo_asignatura_literatura }}
                         </td>
                         <td>H. del Peru:</td>
                         <td>
-                            {{$conteo_asignatura_hp}}
+                            {{ $conteo_asignatura_hp }}
                         </td>
                     </tr>
                     <tr>
                         <td>H. Universal:</td>
                         <td>
-                            {{$conteo_asignatura_hu}}
+                            {{ $conteo_asignatura_hu }}
                         </td>
                         <td>Filosofia:</td>
                         <td>
-                            {{$conteo_asignatura_filosofia}}
+                            {{ $conteo_asignatura_filosofia }}
                         </td>
                     </tr>
                     <tr>
                         <td>Logica:</td>
                         <td>
-                            {{$conteo_asignatura_logica}}
+                            {{ $conteo_asignatura_logica }}
                         </td>
                         <td>Economia:</td>
                         <td>
-                            {{$conteo_asignatura_economia}}
+                            {{ $conteo_asignatura_economia }}
                         </td>
                     </tr>
                 </tbody>
@@ -183,30 +184,30 @@
                         $index = 0;
                     @endphp
                     @foreach ($preguntas as $pregunta)
-                    <tr>
-                        <td>{{ $index = $index + 1 }}</td>
-                        <td>{{ $pregunta->año }}</td>
-                        <td>{{ $pregunta->asignatura }}</td>
-                        <td>{{ $pregunta->tema }}</td>
-                        <td>{{ $pregunta->pregunta }}</td>
-                        <td>
-                            @if( $pregunta->respuesta->correcta == "opcion_1" ) 
-                                {{ $pregunta->respuesta->opcion_1 }}
-                            @elseif( $pregunta->respuesta->correcta == "opcion_2" )
-                                {{ $pregunta->respuesta->opcion_2 }}
-                            @elseif( $pregunta->respuesta->correcta == "opcion_3" )
-                                {{ $pregunta->respuesta->opcion_3 }}
-                            @elseif( $pregunta->respuesta->correcta == "opcion_4" )
-                                {{ $pregunta->respuesta->opcion_4 }}
-                            @elseif( $pregunta->respuesta->correcta == "opcion_5" )
-                                {{ $pregunta->respuesta->opcion_5 }}
-                            @endif
-                        </td>
-                        <td>
-                            <a href="{{ route('edit_question', ['id' => $pregunta->id]) }}">Editar</a><br>
-                            <a href="{{ route('change_question', ['action' => 'eliminar']) }}">Eliminar</a>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td>{{ $index = $index + 1 }}</td>
+                            <td>{{ $pregunta->año }}</td>
+                            <td>{{ $pregunta->asignatura }}</td>
+                            <td>{{ $pregunta->tema }}</td>
+                            <td>{{ $pregunta->pregunta }}</td>
+                            <td>
+                                @if ($pregunta->respuesta->correcta == 'opcion_1')
+                                    {{ $pregunta->respuesta->opcion_1 }}
+                                @elseif($pregunta->respuesta->correcta == 'opcion_2')
+                                    {{ $pregunta->respuesta->opcion_2 }}
+                                @elseif($pregunta->respuesta->correcta == 'opcion_3')
+                                    {{ $pregunta->respuesta->opcion_3 }}
+                                @elseif($pregunta->respuesta->correcta == 'opcion_4')
+                                    {{ $pregunta->respuesta->opcion_4 }}
+                                @elseif($pregunta->respuesta->correcta == 'opcion_5')
+                                    {{ $pregunta->respuesta->opcion_5 }}
+                                @endif
+                            </td>
+                            <td>
+                                <a href="{{ route('edit_question', ['id' => $pregunta->id]) }}">Editar</a><br>
+                                <a href="{{ route('change_question', ['action' => 'eliminar']) }}">Eliminar</a>
+                            </td>
+                        </tr>
                     @endforeach
                 </tbody>
             </table>
