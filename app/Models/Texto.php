@@ -9,6 +9,8 @@ class Texto extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'universidad',
+        'año',
         'texto',
         'estado',
     ];

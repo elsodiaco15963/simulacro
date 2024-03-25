@@ -8,9 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Pregunta extends Model
 {
     protected $fillable = [
+        'universidad',
+        'año',
         'asignatura',
         'tema',
-        'año',
         'pregunta',
         'imagen',
         'estado',

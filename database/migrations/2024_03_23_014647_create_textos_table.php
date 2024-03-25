@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('textos', function (Blueprint $table) {
             $table->id();
+            $table->string('universidad');
+            $table->integer('año');
             $table->string('texto');
             $table->integer('estado')->default(1);
             $table->timestamps();

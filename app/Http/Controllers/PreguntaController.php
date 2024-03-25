@@ -9,23 +9,31 @@ use App\Models\Respuesta;
 
 class PreguntaController extends Controller
 {
-    public function list_question(){
-        return view('question/list_question');
+    public function question(){
+        return view('question/question');
+    }
+    public function list_question($value)
+    {
+        $preguntas = Pregunta::where('estado', '=', 1)
+                        ->where('universidad','=',$value)
+                        ->orderBy('created_at', 'desc')
+                        ->get();
+        return view('question/list_question',compact('preguntas'));
     }
 
-    public function create_question(){
+    public function create_question($value){
         return view('question/form_question');
     }
 
-    public function store_question(Request $request) {
+    public function store_question(Request $request,$value) {
         $texto=$request->texto;
-        if($texto == null){
+        if($texto != "Texto"){
 
             $pregunta = new Pregunta();
-        
+            $pregunta->universidad = $value;
+            $pregunta->año = $request->input('año');
             $pregunta->asignatura = $request->input('asignatura');
             $pregunta->tema = $request->input('tema');
-            $pregunta->año = $request->input('año');
             $pregunta->pregunta = $request->input('pregunta.0');
 
             if ($request->hasFile('imagen')) {
@@ -57,6 +65,8 @@ class PreguntaController extends Controller
             $respuesta->save();
         }else {
             $texto = new Texto();
+            $texto->universidad = $value;
+            $texto->año = $request->input('año');
             $texto->texto = $request->input('texto');
             $texto->save();
 
@@ -65,6 +75,7 @@ class PreguntaController extends Controller
             for ($i = 1; $i < 6; $i++) {
 
                 $pregunta = new Pregunta();
+                $pregunta->universidad = $value;
                 $pregunta->asignatura = $request->input('asignatura');
                 $pregunta->tema = $request->input('tema');
                 $pregunta->año = $request->input('año');
@@ -83,12 +94,16 @@ class PreguntaController extends Controller
                 $respuesta->opcion_5 = $request->input('opcion_5.' . $i);
                 $respuesta->correcta = $request->input('correcta.' . $i-1);
                 $respuesta->pregunta_id = $pregunta_id;
-                
+
                 $respuesta->save();
             }
         }
-        return redirect()->route('list_question')->with('success', 'Registrado exitosamente');
+        return redirect()->route('list_question', $value)->with('success', 'Registrado exitosamente');
 
     }
     
+    public function edit_question($id){
+        $pregunta = Pregunta::find($id);
+        return view('question/edit_form_question',compact('pregunta'));
+    }
 }

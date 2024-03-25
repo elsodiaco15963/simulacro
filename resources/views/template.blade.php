@@ -35,7 +35,7 @@
             </div>
             @if(auth()->user()->rol == 2)
             <div class="option" title="Preguntas">
-                <a href="{{ route('list_question') }}">
+                <a href="{{ route('question') }}">
                     <i class="fa-solid fa-paperclip"></i>
                     <p class="option2">Preg</p>
                     <h4 id="calendario">Pregunta</h4>

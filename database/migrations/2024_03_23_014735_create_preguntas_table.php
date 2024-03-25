@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('preguntas', function (Blueprint $table) {
             $table->id();
+            $table->string('universidad');
+            $table->integer('año');
             $table->string('asignatura');
             $table->string('tema');
-            $table->integer('año');
             $table->string('pregunta');
             $table->string('imagen')->nullable();
             $table->integer('estado')->default(1);
